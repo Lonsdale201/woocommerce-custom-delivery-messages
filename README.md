@@ -2,7 +2,7 @@
 egyedi termék értértesítő 
 
 
-Mennyj a WooCommerce beállításokba, és keresd meg az order Notification nevű fület. Ott tudsz mindne kapcsolódót beállítani.
+Mennyj a WooCommerce beállításokba, és keresd meg az order Notification nevű fület. Ott tudsz minden kapcsolódót beállítani.
 
 Shortcode: [woo_delivery_notification]
 
