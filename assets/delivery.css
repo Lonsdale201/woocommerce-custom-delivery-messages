@@ -1,0 +1,28 @@
+/*
+MAIN WRAPPER ELEM
+*/
+.woo-delivery-notification-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #6839cc;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 20px;
+}
+/*
+CÍMSOR CSS
+*/
+.woo-delivery-title {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+/*
+SZÖVEGTÖRZS CSS
+*/
+.woo-delivery-message {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+}
