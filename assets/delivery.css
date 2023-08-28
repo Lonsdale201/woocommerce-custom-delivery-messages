@@ -1,5 +1,5 @@
 /*
-MAIN WRAPPER ELEM
+MAIN WRAPPER ELEM // regular
 */
 .woo-delivery-notification-wrapper {
     display: flex;
@@ -9,15 +9,33 @@ MAIN WRAPPER ELEM
     margin-bottom: 25px;
     padding: 20px;
 }
+
+.woo-delivery-notification-regular-wrapper {
+display: flex;
+flex-direction: column;
+background-color: #6839cc;
+margin-top: 25px;
+margin-bottom: 25px;
+padding: 20px;
+}
+
 /*
 CÍMSOR CSS
 */
+
 .woo-delivery-title {
     font-size: 1.2rem;
     color: white;
     font-weight: 600;
     margin-bottom: 10px;
 }
+.woo-delivery-title-regular {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
 /*
 SZÖVEGTÖRZS CSS
 */
@@ -26,3 +44,11 @@ SZÖVEGTÖRZS CSS
     font-weight: 400;
     color: white;
 }
+
+.woo-delivery-message-regular {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+}
+
+
