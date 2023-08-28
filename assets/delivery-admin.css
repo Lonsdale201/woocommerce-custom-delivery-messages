@@ -1,0 +1,4 @@
+.woocommerce table.form-table fieldset:first-child {
+    margin-top: 0;
+    display: inline-flex;
+}
