@@ -25,6 +25,11 @@ if (!class_exists('Woo_Delivery_Display')) {
             $hide_if_out_of_stock = get_option('wc_delivery_hide_if_out_of_stock') === 'yes';
             $notification_placement = get_option('wc_delivery_notification_placement', 'below_add_to_cart');
 
+            $enable_regular_notification = get_option('wc_delivery_enable_regular_notification') === 'yes';
+            $regular_notification_title = get_option('wc_delivery_regular_notification_title');
+            $regular_notification_message = get_option('wc_delivery_regular_notification_message');
+        
+
             // Ha nincsenek kiválasztva termékek vagy a szöveg üres, akkor off
             if (empty($selected_products) || empty($notification_message)) {
                 return;
@@ -37,6 +42,23 @@ if (!class_exists('Woo_Delivery_Display')) {
             // Aktuális termék ID-jének lekérdezése
             global $product;
             $current_product_id = $product->get_id();
+
+            // Ha az új beállítás engedélyezve van és a termék nem a kiválasztottak között van
+            if ($enable_regular_notification && !in_array($current_product_id, $selected_products)) {
+                if ($hide_if_out_of_stock && !$product->is_in_stock()) {
+                    return;
+                }
+                echo '<div class="woo-delivery-notification-regular-wrapper">';
+
+                // Cím megjelenítése, ha van beállítva
+                if (!empty($regular_notification_title)) {
+                    echo '<div class="woo-delivery-title-regular">' . esc_html($regular_notification_title) . '</div>';
+                }
+
+                echo '<span class="woo-delivery-message-regular">' . esc_html($regular_notification_message) . '</span>';
+                echo '</div>';
+            }
+        
 
             // Ha az aktuális termék azonosítója a kiválasztott termékek között van
             if (in_array($current_product_id, $selected_products)) {
@@ -59,19 +81,21 @@ if (!class_exists('Woo_Delivery_Display')) {
         public function delivery_notification_shortcode() {
             // Beállítások lekérdezése
             $selected_products = get_option('wc_delivery_selected_products');
+            $notification_title = get_option('wc_delivery_notification_title');
             $notification_message = get_option('wc_delivery_notification_message');
             $hide_if_out_of_stock = get_option('wc_delivery_hide_if_out_of_stock') === 'yes';
             $notification_placement = get_option('wc_delivery_notification_placement', 'below_add_to_cart');
         
-            // Ha nincsenek kiválasztva termékek vagy a szöveg üres, akkor off
-            if (empty($selected_products) || empty($notification_message)) {
-                return '';
-            }
-               // Ha a beállítás nem a shortcode-ra van állítva, akkor off
+            // Regular beállítások lekérdezése
+            $enable_regular_notification = get_option('wc_delivery_enable_regular_notification') === 'yes';
+            $regular_notification_message = get_option('wc_delivery_regular_notification_message');
+            $regular_notification_title = get_option('wc_delivery_regular_notification_title'); 
+        
+            // Ha a beállítás nem a shortcode-ra van állítva, akkor off
             if ($notification_placement !== 'shortcode') {
                 return '';
             }
-
+        
             // Aktuális termék ID-jének lekérdezése
             global $product;
             if (!$product) {
@@ -79,22 +103,39 @@ if (!class_exists('Woo_Delivery_Display')) {
             }
         
             $current_product_id = $product->get_id();
+            
+            $output = '';  // Initialize the output variable here
         
-            // Ha az aktuális termék azonosítója nem a kiválasztott termékek között van akkor off
-            if (!in_array($current_product_id, $selected_products)) {
-                return '';
+            // Ha az aktuális termék azonosítója a kiválasztott termékek között van
+            if (in_array($current_product_id, $selected_products)) {
+                // Ha be van kapcsolva a "Hide if out of stock" beállítás és a termék nincs készleten, akkor off
+                if ($hide_if_out_of_stock && !$product->is_in_stock()) {
+                    return '';
+                }
+        
+                $output .= '<div class="woo-delivery-notification-wrapper">';
+                if (!empty($notification_title)) {
+                    $output .= '<div class="woo-delivery-title">' . esc_html($notification_title) . '</div>';
+                }
+                $output .= '<span class="woo-delivery-message">' . esc_html($notification_message) . '</span></div>';
+        
+            } elseif ($enable_regular_notification) {
+                // Ha be van kapcsolva a "Hide if out of stock" beállítás és a termék nincs készleten, akkor off
+                if ($hide_if_out_of_stock && !$product->is_in_stock()) {
+                    return '';
+                }
+        
+                $output .= '<div class="woo-delivery-notification-regular-wrapper">';
+                if (!empty($regular_notification_title)) {
+                    $output .= '<div class="woo-delivery-title-regular">' . esc_html($regular_notification_title) . '</div>';
+                }
+                $output .= '<span class="woo-delivery-message-regular">' . esc_html($regular_notification_message) . '</span></div>';
             }
         
-            // Ha be van kapcsolva a "Hide if out of stock" beállítás és a termék nincs készleten, akkor off
-            if ($hide_if_out_of_stock && !$product->is_in_stock()) {
-                return '';
-            }
+            return $output;
+        }
         
-            return '<div class="woo-delivery-notification-wrapper">
-                <span class="woo-delivery-message">' . esc_html($notification_message) . '</span>
-            </div>';
-        }        
-
+        
         public function display_cart_notification() {
             $cart_reminder = get_option('wc_delivery_cart_reminder', 'no');
             
