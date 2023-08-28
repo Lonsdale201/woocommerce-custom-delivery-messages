@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Delivery Notifications
 Plugin URI: https://github.com/Lonsdale201/woocommerce-custom-delivery-messages
 Description: Egy bővítmény a WooCommerce-hez, ami lehetővé teszi a szállítási értesítések beállításait.
-Version: 1.0
+Version: 1.5
 Author: HelloWP!
 Author URI: https://hellowp.io/hu/ 
 */
