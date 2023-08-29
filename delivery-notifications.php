@@ -2,8 +2,8 @@
 /*
 Plugin Name: WooCommerce Delivery Notifications
 Plugin URI: https://github.com/Lonsdale201/woocommerce-custom-delivery-messages
-Description: Egy bővítmény a WooCommerce-hez, ami lehetővé teszi a szállítási értesítések beállításait.
-Version: 1.5
+Description: Egyszerű bővítmény a WooCommerce-hez, amivel egyedi információt jeleníthetünk meg a szállítással kapcsolatban.
+Version: 2.0
 Author: HelloWP!
 Author URI: https://hellowp.io/hu/ 
 */
@@ -20,11 +20,14 @@ if (!class_exists('Woo_Delivery_Notifications')) {
             // Betöltjük a fájlokat
             require_once plugin_dir_path(__FILE__) . 'delivery-settings.php';
             require_once plugin_dir_path(__FILE__) . 'delivery-display.php';
+            require_once plugin_dir_path(__FILE__) . 'delivery-product-tab.php';
             add_filter('plugin_action_links_' . plugin_basename(__FILE__), array($this, 'add_settings_link'));
+            add_action('init', array($this, 'load_textdomain'));
     
-            // Inicializáljuk a beállításokat
+            // Inicializál
             new Woo_Delivery_Notifications_Settings();
             new Woo_Delivery_Display();
+            new Woo_Delivery_Product_Tab();
     
             // Stílus betöltés
             add_action('wp_enqueue_scripts', array($this, 'enqueue_styles_only_on_product_page'));
@@ -41,7 +44,9 @@ if (!class_exists('Woo_Delivery_Notifications')) {
             array_unshift($links, $settings_link); 
             return $links;
         }
-        
+        public function load_textdomain() {
+            load_plugin_textdomain('woocommerce-delivery-notifications', false, basename(dirname(__FILE__)) . '/languages/');
+        }        
     }
     
     new Woo_Delivery_Notifications();
