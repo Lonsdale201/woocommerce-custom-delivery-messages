@@ -1,0 +1,116 @@
+msgid "Delivery Notifications"
+msgstr ""
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+msgid "You do not have sufficient permissions to update these settings."
+msgstr ""
+
+msgid "Delivery Status"
+msgstr ""
+
+msgid "Extend delivery time"
+msgstr ""
+
+msgid "Filter by Delivery Status"
+msgstr ""
+
+msgid "Extended delivery time"
+msgstr ""
+
+msgid "Delivery Notifications"
+msgstr ""
+
+msgid "Delivery Notifications Settings"
+msgstr ""
+
+msgid "Select Products"
+msgstr ""
+
+msgid "Hide if out of stock"
+msgstr ""
+
+msgid "Show Delivery Admin Column"
+msgstr ""
+
+msgid "Notification Placement"
+msgstr ""
+
+msgid "Below Add to Cart"
+msgstr ""
+
+msgid "Above Add to Cart"
+msgstr ""
+
+msgid "Shortcode"
+msgstr ""
+
+msgid "Notification Title"
+msgstr ""
+
+msgid "Notification Message"
+msgstr ""
+
+msgid "Cart Reminder"
+msgstr ""
+
+msgid "Cart Reminder Message"
+msgstr ""
+
+msgid "Delivery notification settings for regular"
+msgstr ""
+
+msgid "Enable regular delivery notification"
+msgstr ""
+
+msgid "Notification Title for Regular Products"
+msgstr ""
+
+msgid "Notification Message for Regular Products"
+msgstr ""
+
+msgid "Delivery Status"
+msgstr ""
+
+msgid "Extend delivery time"
+msgstr ""
+
+msgid "Filter by Delivery Status"
+msgstr ""
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+msgid "You do not have sufficient permissions to update these settings."
+msgstr ""
+
+msgid "Select Product Categories"
+msgstr ""
+
+msgid "Select product categories for delivery notifications."
+msgstr ""
+
+msgid "Delivery product tab"
+msgstr ""
+
+msgid "Create a new Delivery Tab of every product to inform the customers about the shipping"
+msgstr ""
+
+msgid "Label for the Delivery tab on the product page."
+msgstr ""
+
+msgid "Content for the Delivery tab on the product page. You can use SHORTCODE, or HTML."
+msgstr ""
+
+msgid "Delivery tab Label"
+msgstr ""
+
+msgid "Enable Delivery Product tab"
+msgstr ""
+
+msgid "Delivery Tab Priority"
+msgstr ""
+
+msgid "Set the priority for the Delivery tab. Lower numbers correspond to higher priority and will display the tab earlier."
+msgstr ""
