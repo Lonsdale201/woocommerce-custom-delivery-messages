@@ -2,9 +2,19 @@
 egyedi termék értértesítő 
 
 
-Menj  a WooCommerce beállításokba, és keresd meg az order Notification nevű fület. Ott tudsz minden a bővítményhez kapcsolódó beállítást megadni.
+A bővítmény segítségével egyszerűen megadható egy egyedi információs box a termék adatlapokon. Kiválasztható, hogy mely termékek, vagy kategóriákra legyen érvényes. Elhelyezheted az információs dobozt a kosárhoz adás gomb alatt, vagy felett, vagy Shortcode segítségével manuálisan. Reverz funkció - minden más termék esetében megjeleníthetsz egy fordított verziót is.
+
+* Beállítható, hogy ha a termék nincs készleten rejtse el az információs dobozt.
+* Többnyelvű kompatibilis
+* Kosár oldalon is megjeleníthető egy emlékeztető szöveg.
+* Saját Szállítási tabfül bekapcsolása. A tartalom mező Shortcode kompatibilis. (cím, tartalom és prioritás megadható), virtuális termékek esetében nem jelenik meg.
+* Nyelvi sablon fájl bekészítve
 
 Shortcode: [woo_delivery_notification]
+
+
+![image](https://github.com/Lonsdale201/woocommerce-custom-delivery-messages/assets/23199033/c62e5b75-7bcd-42f2-be52-f57e22518f47)
+
 
 Classok:
 
@@ -18,6 +28,14 @@ Classok:
 
 ## Changelog 
 
+2023.08.30
+
+2.0
+
+* Többnyelvűség kompatibilitás / .pot fájl
+* Új Elhelyezés: Kosár gomb felett
+* Új Beállítás: Kategóriák kiválasztása opció
+* Új beállítás: Szállítási termék tab fül (label , prior, kontent)
 
 2023.08.28 
 
