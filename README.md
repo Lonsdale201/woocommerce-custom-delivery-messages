@@ -1,5 +1,5 @@
 # woocommerce-custom-delivery-messages
-egyedi termék értértesítő 
+
 
 
 A bővítmény segítségével egyszerűen megadható egy egyedi információs box a termék adatlapokon. Kiválasztható, hogy mely termékek, vagy kategóriákra legyen érvényes. Elhelyezheted az információs dobozt a kosárhoz adás gomb alatt, vagy felett, vagy Shortcode segítségével manuálisan. Reverz funkció - minden más termék esetében megjeleníthetsz egy fordított verziót is.
