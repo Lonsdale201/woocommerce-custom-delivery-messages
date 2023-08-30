@@ -12,6 +12,7 @@ A bővítmény segítségével egyszerűen megadható egy egyedi információs b
 
 Shortcode: [woo_delivery_notification]
 
+A bővítmény beállításaihoz navigálj a WooCommerce - Beállítások - Delivery Notifications tabfülre
 
 ![image](https://github.com/Lonsdale201/woocommerce-custom-delivery-messages/assets/23199033/c62e5b75-7bcd-42f2-be52-f57e22518f47)
 
