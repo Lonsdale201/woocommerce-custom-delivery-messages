@@ -15,8 +15,11 @@ Shortcode: [woo_delivery_notification]
 
 ![image](https://github.com/Lonsdale201/woocommerce-custom-delivery-messages/assets/23199033/c62e5b75-7bcd-42f2-be52-f57e22518f47)
 
+**Tesztelve:**
+WooCommerce: 8.0.3
+PHP: 8.1
 
-Classok:
+**Classok:**
 
 * .woo-delivery-notification-wrapper
 * .woo-delivery-notification-regular-wrapper 
